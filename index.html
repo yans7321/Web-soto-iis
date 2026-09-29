@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soto Tangkar Ibu Iis - Tenjo, Bogor</title>
+    <meta name="description" content="Nikmati cita rasa khas Soto Tangkar Ibu Iis di Tenjo, Bogor. Kuah gurih rempah pilihan, daging empuk, dan harga terjangkau. Pesan langsung via WhatsApp!">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#B91C1C',
+                            orange: '#EA580C',
+                            amber: '#F59E0B',
+                            dark: '#1C1917',
+                            cream: '#FEF3C7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 flex flex-col min-h-screen">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#beranda" class="flex items-center gap-2">
+                <div class="bg-brand-red text-white p-2 rounded-xl font-black text-xl shadow-md shadow-brand-red/20">
+                    ST
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-none text-stone-900">Soto Tangkar</h1>
+                    <span class="text-xs text-brand-orange font-semibold">Ibu Iis • Tenjo</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-stone-600">
+                <a href="#beranda" class="hover:text-brand-red transition">Beranda</a>
+                <a href="#tentang" class="hover:text-brand-red transition">Tentang Kami</a>
+                <a href="#menu" class="hover:text-brand-red transition">Menu & Pesan</a>
+                <a href="#ulasan" class="hover:text-brand-red transition">Ulasan</a>
+                <a href="#lokasi" class="hover:text-brand-red transition">Lokasi</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button onclick="toggleCartModal()" aria-label="Lihat keranjang pesanan" class="relative p-2 bg-stone-100 hover:bg-stone-200 rounded-xl transition">
+                    <i data-lucide="shopping-bag" class="w-5 h-5 text-stone-700"></i>
+                    <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold w-5 h-5 rounded-full items-center justify-center border-2 border-white">0</span>
+                </button>
+                <a href="#menu" class="hidden sm:inline-flex bg-brand-red hover:bg-red-800 text-white font-semibold text-sm px-4 py-2 rounded-xl transition shadow-sm">
+                    Pesan Sekarang
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative bg-gradient-to-br from-stone-900 via-stone-800 to-brand-dark text-white py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-6xl mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-amber-300 text-xs font-semibold px-3 py-1.5 rounded-full">
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                    <span>4.5 dari 5 Bintang (463+ Ulasan Google)</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                    Cita Rasa Soto Tangkar Khas <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-brand-orange">Ibu Iis</span>
+                </h1>
+                <p class="text-stone-300 text-base md:text-lg max-w-lg mx-auto md:mx-0">
+                    Kuah gurih kaya rempah dipadu dengan potongan daging sapi empuk. Disajikan hangat, pas untuk santap siang keluarga di Tenjo, Bogor.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start">
+                    <a href="#menu" class="w-full sm:w-auto bg-brand-red hover:bg-red-700 text-white font-bold px-6 py-3.5 rounded-xl transition text-center shadow-lg shadow-brand-red/30 flex items-center justify-center gap-2">
+                        <i data-lucide="utensils" class="w-4 h-4"></i> Lihat Menu & Pesan
+                    </a>
+                    <a href="https://maps.app.goo.gl/xjTzEFNcZiRDRfu69" target="_blank" rel="noopener" class="w-full sm:w-auto bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 font-semibold px-6 py-3.5 rounded-xl transition text-center flex items-center justify-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-brand-orange"></i> Buka di Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center">
+                <div class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden border-4 border-stone-700 shadow-2xl bg-stone-800 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=800&q=80" alt="Soto Tangkar Lezat" class="object-cover w-full h-full hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-4 left-4 right-4 bg-stone-900/90 backdrop-blur-md p-4 rounded-2xl border border-stone-700 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs text-stone-400">Jam Operasional Hari Ini</p>
+                            <p class="text-sm font-bold flex items-center gap-1.5">
+                                <span class="js-open-dot w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span class="js-open-status text-emerald-400">Buka Sekarang (06:00 - 16:00 WIB)</span>
+                            </p>
+                        </div>
+                        <span class="text-xs bg-amber-500/20 text-amber-300 font-bold px-2.5 py-1 rounded-lg border border-amber-500/30 whitespace-nowrap">Mulai Rp 22rb</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section id="tentang" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-brand-orange mb-2">Mengapa Memilih Kami</h2>
+                <h3 class="text-3xl font-extrabold text-stone-900">Resep Warisan dengan Bahan Pilihan</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100 hover:border-brand-orange/30 transition">
+                    <div class="w-12 h-12 bg-amber-100 text-brand-orange rounded-xl flex items-center justify-center mb-4 font-bold">
+                        <i data-lucide="flame" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-stone-900 mb-2">Rempah Asli & Autentik</h4>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Menggunakan campuran bumbu tradisional yang dimasak perlahan hingga meresap sempurna ke dalam kuah santan gurih.
+                    </p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100 hover:border-brand-orange/30 transition">
+                    <div class="w-12 h-12 bg-red-100 text-brand-red rounded-xl flex items-center justify-center mb-4 font-bold">
+                        <i data-lucide="beef" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-stone-900 mb-2">Daging Segar & Empuk</h4>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Pilihan olahan daging sapi dan iga dengan kualitas terbaik yang diolah secara higienis hingga bertekstur sangat empuk.
+                    </p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100 hover:border-brand-orange/30 transition">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 font-bold">
+                        <i data-lucide="badge-check" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-stone-900 mb-2">Harga Terjangkau</h4>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Sajian makanan berkualitas tinggi dengan porsi memuaskan yang ramah di kantong untuk semua kalangan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KATALOG MENU & KALKULATOR PESANAN -->
+    <section id="menu" class="py-16 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-brand-orange mb-2">Pilihan Hidangan</h2>
+                    <h3 class="text-3xl font-extrabold text-stone-900">Daftar Menu Favorit</h3>
+                    <p class="text-stone-600 text-sm mt-2">Pilih menu favorit Anda, atur porsi, lalu pesan langsung via WhatsApp tanpa ribet.</p>
+                </div>
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="filter-container">
+                    <button onclick="filterMenu('all')" data-cat="all" class="filter-btn active bg-brand-red text-white border border-brand-red text-xs font-bold px-4 py-2 rounded-xl transition">Semua</button>
+                    <button onclick="filterMenu('makanan')" data-cat="makanan" class="filter-btn bg-white text-stone-600 border border-stone-200 hover:bg-stone-100 text-xs font-bold px-4 py-2 rounded-xl transition">Makanan</button>
+                    <button onclick="filterMenu('minuman')" data-cat="minuman" class="filter-btn bg-white text-stone-600 border border-stone-200 hover:bg-stone-100 text-xs font-bold px-4 py-2 rounded-xl transition">Minuman</button>
+                    <button onclick="filterMenu('pelengkap')" data-cat="pelengkap" class="filter-btn bg-white text-stone-600 border border-stone-200 hover:bg-stone-100 text-xs font-bold px-4 py-2 rounded-xl transition">Pelengkap</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="menu-grid">
+                <!-- Diisi otomatis oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ULASAN PELANGGAN -->
+    <section id="ulasan" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-brand-orange mb-2">Kata Pengunjung</h2>
+                <h3 class="text-3xl font-extrabold text-stone-900">Ulasan Google Maps</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100 space-y-3">
+                    <div class="flex items-center gap-1 text-amber-400">
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                    </div>
+                    <p class="text-stone-700 text-sm italic leading-relaxed">"Soto tangkarnya gurih banget, dagingnya empuk ga bikin nyelip di gigi. Sambalnya juga mantap!"</p>
+                    <span class="text-xs text-stone-400 block">- Budi S. (Ulasan Google Maps)</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100 space-y-3">
+                    <div class="flex items-center gap-1 text-amber-400">
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                    </div>
+                    <p class="text-stone-700 text-sm italic leading-relaxed">"Porsinya banyak, harganya bersahabat. Jadi langganan tiap jam istirahat kerja. Kuah santannya nagih!"</p>
+                    <span class="text-xs text-stone-400 block">- Siti R. (Ulasan Google Maps)</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100 space-y-3">
+                    <div class="flex items-center gap-1 text-amber-400">
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                    </div>
+                    <p class="text-stone-700 text-sm italic leading-relaxed">"Rempahnya terasa banget dan tempatnya strategis di pinggir jalan raya. Cocok buat sarapan bareng keluarga."</p>
+                    <span class="text-xs text-stone-400 block">- Agus W. (Ulasan Google Maps)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOKASI & JAM OPERASIONAL -->
+    <section id="lokasi" class="py-16 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+
+                <!-- Info & Jam Operasional -->
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-brand-orange text-xs font-bold uppercase tracking-wider">Lokasi & Kontak</span>
+                        <h2 class="text-2xl md:text-3xl font-extrabold text-stone-900 mt-1">Kunjungi Rumah Makan Kami</h2>
+                        <p class="text-stone-600 text-sm mt-2">Mudah ditemukan di jalur utama Tenjo. Siap melayani makan di tempat maupun dibawa pulang.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="p-2.5 bg-amber-100 text-amber-800 rounded-lg">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-sm">Alamat Lengkap</h4>
+                                <p class="text-stone-600 text-xs mt-0.5">Jalan Raya Jasinga Tenjo, Kp. Sukajaya RT 03 RW 01, Desa Singabraja, Tenjo, Kab. Bogor, Jawa Barat 16370</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="p-2.5 bg-amber-100 text-amber-800 rounded-lg">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-sm">Jam Operasional</h4>
+                                <ul class="text-stone-600 text-xs mt-1 space-y-1">
+                                    <li>• Sabtu - Kamis: <span class="font-semibold text-stone-800">06:00 – 16:00 WIB</span></li>
+                                    <li>• Jumat: <span class="font-semibold text-stone-800">06:00 – 17:00 WIB</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="p-2.5 bg-amber-100 text-amber-800 rounded-lg">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-sm">Telepon / WhatsApp</h4>
+                                <!-- TODO: ganti dengan nomor asli Ibu Iis -->
+                                <p class="text-stone-600 text-xs mt-0.5">+62 812-xxxx-xxxx (Ibu Iis)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.app.goo.gl/xjTzEFNcZiRDRfu69" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white font-semibold text-sm px-5 py-3 rounded-xl transition shadow-sm">
+                        <i data-lucide="navigation" class="w-4 h-4"></i> Petunjuk Arah
+                    </a>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="h-full min-h-[350px] bg-stone-100 rounded-2xl overflow-hidden shadow-inner border border-stone-200">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.2345!2d106.456!3d-6.345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1cc95594291%3A0x32f4ed1030681536!2sSOTO%20TANGKAR%20IBU%20IIS!5e0!3m2!1sid!2sid!4v1600000000000!5m2!1sid!2sid"
+                        width="100%"
+                        height="100%"
+                        style="border:0; min-height: 400px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Lokasi Soto Tangkar Ibu Iis di Google Maps">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto bg-stone-900 text-stone-400 py-8 border-t border-stone-800 text-xs">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="font-bold text-white text-sm">Soto Tangkar Ibu Iis</p>
+                <p class="mt-0.5">Kuliner Asli & Autentik Tenjo, Kab. Bogor</p>
+            </div>
+            <p>&copy; 2026 Soto Tangkar Ibu Iis. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL KERANJANG PESANAN -->
+    <div id="cart-modal" class="hidden fixed inset-0 z-[60] items-center justify-center p-4">
+        <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" onclick="toggleCartModal()"></div>
+        <div class="relative bg-white w-full max-w-md rounded-2xl shadow-2xl border border-stone-200 max-h-[85vh] flex flex-col">
+            <div class="flex items-center justify-between px-5 py-4 border-b border-stone-100">
+                <h3 class="font-bold text-stone-900 flex items-center gap-2">
+                    <i data-lucide="shopping-cart" class="w-5 h-5 text-brand-red"></i>
+                    Rincian Pesanan
+                </h3>
+                <button onclick="toggleCartModal()" aria-label="Tutup keranjang" class="p-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 transition">
+                    <i data-lucide="x" class="w-4 h-4 text-stone-600"></i>
+                </button>
+            </div>
+
+            <div id="cart-modal-items" class="px-5 py-4 space-y-3 overflow-y-auto flex-1">
+                <!-- Diisi otomatis oleh JavaScript -->
+            </div>
+
+            <div class="px-5 py-4 border-t border-stone-100 space-y-2">
+                <div class="flex justify-between text-sm text-stone-600">
+                    <span>Total Item</span>
+                    <span id="cart-modal-total-qty" class="font-semibold">0 porsi</span>
+                </div>
+                <div class="flex justify-between text-base font-bold text-stone-900 pt-2 border-t border-stone-100">
+                    <span>Estimasi Total</span>
+                    <span id="cart-modal-total-price" class="text-brand-red">Rp 0</span>
+                </div>
+
+                <div class="pt-3">
+                    <label for="order-note" class="block text-xs text-stone-500 mb-1">Catatan Tambahan (Opsional):</label>
+                    <input type="text" id="order-note" placeholder="Contoh: Bawa pulang, sambal dipisah" class="w-full text-xs px-3 py-2 rounded-lg border border-stone-200 focus:outline-none focus:ring-1 focus:ring-brand-orange">
+                </div>
+
+                <div class="flex gap-2 pt-1">
+                    <button onclick="resetCart()" class="px-4 py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-600 text-xs font-bold transition">Reset</button>
+                    <button onclick="sendWhatsAppOrder()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pesan via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript App Logic -->
+    <script>
+        // Data Menu
+        const menuData = [
+            { id: 1, name: "Soto Tangkar Daging", price: 25000, category: "makanan", desc: "Daging sapi pilihan empuk dengan kuah santan bumbu kuning kaya rempah.", popular: true },
+            { id: 2, name: "Soto Tangkar Campur", price: 22000, category: "makanan", desc: "Kombinasi daging dan jeroan sapi segar yang disiram kuah gurih hangat.", popular: false },
+            { id: 3, name: "Nasi Putih", price: 5000, category: "pelengkap", desc: "Nasi putih hangat porsi pas.", popular: false },
+            { id: 4, name: "Es Jeruk Peras", price: 7000, category: "minuman", desc: "Jeruk peras segar alami penawar dahaga.", popular: true },
+            { id: 5, name: "Teh Manis (Es / Hangat)", price: 4000, category: "minuman", desc: "Teh seduh harum manis pas.", popular: false },
+            { id: 6, name: "Emping / Kerupuk", price: 3000, category: "pelengkap", desc: "Pelengkap renyah untuk santap soto.", popular: false }
+        ];
+
+        // State Keranjang
+        let cart = {};
+
+        const formatRupiah = (n) => 'Rp ' + n.toLocaleString('id-ID');
+
+        // Render Menu Cards
+        function renderMenu(categoryFilter = 'all') {
+            const container = document.getElementById('menu-grid');
+            container.innerHTML = '';
+
+            const filteredMenu = categoryFilter === 'all'
+                ? menuData
+                : menuData.filter(item => item.category === categoryFilter);
+
+            filteredMenu.forEach(item => {
+                const qty = cart[item.id] || 0;
+                const card = document.createElement('div');
+                card.className = "bg-white p-4 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-between hover:border-amber-300 transition";
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-start justify-between gap-2">
+                            <h4 class="font-bold text-stone-900 text-sm">${item.name}</h4>
+                            ${item.popular ? '<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">Favorit</span>' : ''}
+                        </div>
+                        <p class="text-stone-500 text-xs mt-1 leading-relaxed">${item.desc}</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
+                        <span class="font-bold text-brand-red text-sm">${formatRupiah(item.price)}</span>
+                        <div class="flex items-center gap-2">
+                            ${qty > 0 ? `
+                                <button onclick="updateQty(${item.id}, -1)" aria-label="Kurangi ${item.name}" class="w-7 h-7 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold flex items-center justify-center text-sm">-</button>
+                                <span class="text-xs font-bold w-4 text-center">${qty}</span>
+                            ` : ''}
+                            <button onclick="updateQty(${item.id}, 1)" aria-label="Tambah ${item.name}" class="w-7 h-7 rounded-lg bg-brand-orange hover:bg-orange-700 text-white font-bold flex items-center justify-center text-sm shadow-sm">+</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Update Quantity
+        function updateQty(id, change) {
+            const current = cart[id] || 0;
+            const updated = current + change;
+
+            if (updated <= 0) {
+                delete cart[id];
+            } else {
+                cart[id] = updated;
+            }
+
+            const activeBtn = document.querySelector('.filter-btn.active');
+            renderMenu(activeBtn ? activeBtn.getAttribute('data-cat') : 'all');
+            renderCart();
+        }
+
+        // Render Cart (badge di header + isi modal)
+        function renderCart() {
+            const itemIds = Object.keys(cart);
+            let totalQty = 0;
+            let totalPrice = 0;
+
+            itemIds.forEach(id => {
+                const item = menuData.find(m => m.id === parseInt(id));
+                if (!item) return;
+                totalQty += cart[id];
+                totalPrice += item.price * cart[id];
+            });
+
+            // Badge di header
+            const badge = document.getElementById('cart-badge');
+            badge.textContent = totalQty;
+            if (totalQty > 0) {
+                badge.classList.remove('hidden');
+                badge.classList.add('flex');
+            } else {
+                badge.classList.add('hidden');
+                badge.classList.remove('flex');
+            }
+
+            // Isi modal keranjang
+            const modalItems = document.getElementById('cart-modal-items');
+            if (itemIds.length === 0) {
+                modalItems.innerHTML = '<p class="text-stone-400 text-xs text-center py-10">Belum ada item yang dipilih.<br>Klik tombol + pada menu untuk menambah.</p>';
+            } else {
+                modalItems.innerHTML = itemIds.map(id => {
+                    const item = menuData.find(m => m.id === parseInt(id));
+                    const qty = cart[id];
+                    const subtotal = item.price * qty;
+                    return `
+                        <div class="flex items-center justify-between gap-3 py-1.5 border-b border-stone-50">
+                            <div class="flex-1">
+                                <p class="font-medium text-stone-800 text-xs">${item.name}</p>
+                                <p class="text-[10px] text-stone-400">${qty} x ${formatRupiah(item.price)}</p>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="updateQty(${item.id}, -1)" aria-label="Kurangi" class="w-6 h-6 rounded-md bg-stone-100 hover:bg-stone-200 text-stone-600 font-bold text-xs flex items-center justify-center">-</button>
+                                <span class="text-xs font-bold w-4 text-center">${qty}</span>
+                                <button onclick="updateQty(${item.id}, 1)" aria-label="Tambah" class="w-6 h-6 rounded-md bg-brand-orange hover:bg-orange-700 text-white font-bold text-xs flex items-center justify-center">+</button>
+                                <span class="font-semibold text-stone-900 text-xs w-20 text-right">${formatRupiah(subtotal)}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            document.getElementById('cart-modal-total-qty').textContent = `${totalQty} porsi`;
+            document.getElementById('cart-modal-total-price').textContent = formatRupiah(totalPrice);
+        }
+
+        // Filter Menu Handler
+        function filterMenu(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                const isActive = btn.getAttribute('data-cat') === category;
+                btn.classList.toggle('active', isActive);
+                btn.classList.toggle('bg-brand-red', isActive);
+                btn.classList.toggle('text-white', isActive);
+                btn.classList.toggle('border-brand-red', isActive);
+                btn.classList.toggle('bg-white', !isActive);
+                btn.classList.toggle('text-stone-600', !isActive);
+                btn.classList.toggle('border-stone-200', !isActive);
+                btn.classList.toggle('hover:bg-stone-100', !isActive);
+            });
+            renderMenu(category);
+        }
+
+        // Modal Keranjang
+        function toggleCartModal(forceClose = false) {
+            const modal = document.getElementById('cart-modal');
+            if (forceClose) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                return;
+            }
+            const isOpen = !modal.classList.contains('hidden');
+            if (isOpen) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            } else {
+                renderCart();
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        // Reset Cart
+        function resetCart() {
+            cart = {};
+            const activeBtn = document.querySelector('.filter-btn.active');
+            renderMenu(activeBtn ? activeBtn.getAttribute('data-cat') : 'all');
+            renderCart();
+        }
+
+        // Send Order via WhatsApp
+        function sendWhatsAppOrder() {
+            const itemIds = Object.keys(cart);
+            if (itemIds.length === 0) {
+                alert('Pilih minimal satu menu terlebih dahulu.');
+                return;
+            }
+
+            // TODO: ganti dengan nomor WhatsApp asli Ibu Iis (format 62xxx tanpa +)
+            let phoneNumber = "6281200000000";
+            let text = "Halo Soto Tangkar Ibu Iis, saya ingin memesan:\n\n";
+
+            let grandTotal = 0;
+            itemIds.forEach(id => {
+                const item = menuData.find(m => m.id === parseInt(id));
+                const qty = cart[id];
+                const subtotal = item.price * qty;
+                grandTotal += subtotal;
+                text += `• ${item.name} (${qty}x) = ${formatRupiah(subtotal)}\n`;
+            });
+
+            const note = document.getElementById('order-note').value.trim();
+            if (note) {
+                text += `\nCatatan: ${note}\n`;
+            }
+
+            text += `\nTotal Estimasi: ${formatRupiah(grandTotal)}\n`;
+            text += `Mohon konfirmasi pesanan dan ketersediaannya. Terima kasih!`;
+
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, '_blank', 'noopener');
+        }
+
+        // Indikator Jam Buka Real-time (WIB = UTC+7)
+        function refreshOpenStatus() {
+            const now = new Date();
+            const wib = new Date(now.getTime() + (7 * 60 + now.getTimezoneOffset()) * 60000);
+            const day = wib.getDay(); // 0=Minggu ... 5=Jumat ... 6=Sabtu
+            const hour = wib.getHours() + wib.getMinutes() / 60;
+            const closeHour = day === 5 ? 17 : 16; // Jumat tutup 17:00, hari lain 16:00
+            const isOpen = hour >= 6 && hour < closeHour;
+
+            const hoursLabel = day === 5 ? '06:00 - 17:00 WIB' : '06:00 - 16:00 WIB';
+            const statusLabel = isOpen ? 'Buka Sekarang' : 'Sedang Tutup';
+
+            document.querySelectorAll('.js-open-status').forEach(el => {
+                el.textContent = `${statusLabel} (${hoursLabel})`;
+                el.classList.toggle('text-emerald-400', isOpen);
+                el.classList.toggle('text-red-400', !isOpen);
+            });
+            document.querySelectorAll('.js-open-dot').forEach(el => {
+                el.classList.toggle('bg-emerald-500', isOpen);
+                el.classList.toggle('bg-red-500', !isOpen);
+            });
+        }
+
+        // Initialize Lucide Icons & Page Load
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderMenu('all');
+            renderCart();
+            refreshOpenStatus();
+            setInterval(refreshOpenStatus, 30000);
+        });
+    </script>
+</body>
+</html>
